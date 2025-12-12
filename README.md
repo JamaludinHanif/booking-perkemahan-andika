@@ -1,14 +1,12 @@
-# Sistem Manajemen Surat
+# Sistem Booking Perkemahan Andika
 
-Aplikasi manajemen surat berbasis web yang dibangun dengan Laravel untuk memudahkan pengelolaan surat-surat administrasi seperti Surat Keterangan Domisili (SKD), Surat Keterangan Tidak Mampu (SKTM), dan Surat Keterangan Usaha (SHU).
+Aplikasi manajemen surat berbasis web yang dibangun dengan Laravel untuk memudahkan pengelolaan Booking pada perkemahan
 
 ## Fitur
 
-- **Login admin & masyarakat**
-- **Pengajuan surat online (SKU, SKTM, Domisili, dll.)**
-- **Tracking status surat**
-- **Dashboard admin untuk verifikasi dan cetak dokumen**
-- **Arsip surat otomatis**
+- **Login admin & registrast booking customer**
+- **Dashboard admin untuk verifikasi da approve booking**
+- **Master Area Kemah**
 
 ## Requirements
 
@@ -82,28 +80,15 @@ php artisan tinker
 Kemudian paste dan jalankan kode berikut di dalam Tinker:
 
 ```php
+
 User::create([
-    'name' => 'Admin Muhammad Galih',
+    'name' => 'admin andika',
     'role' => 'admin',
-    'username' => 'galih',
-    'email' => 'muhammadgalih@gmail.com',
-    'password' => bcrypt('12345678')
-]);
+    'username' => 'andika',
+    'email' => 'andika@gmail.com',
+    'password' => bcrypt('andika123')
+])
 
-SuratTypes::create([
-    'name' => 'Surat Keterangan Domisili (SKD)',
-    'template_view' => 'template_skd',
-]);
-
-SuratTypes::create([
-    'name' => 'Surat Keterangan Tidak Mampu (SKTM)',
-    'template_view' => 'template_sktm',
-]);
-
-SuratTypes::create([
-    'name' => 'Surat Keterangan Usaha (SHU)',
-    'template_view' => 'template_shu',
-]);
 ```
 
 Ketik `exit` untuk keluar dari Tinker.
@@ -118,25 +103,19 @@ Aplikasi akan berjalan di `http://localhost:8000`
 
 ## Akses Aplikasi
 
-### Portal Masyarakat
+### Registrasi Booking Customer
 ```
-URL: http://localhost:8000/masyarakat
+URL: http://localhost:8000/
 ```
-Portal untuk masyarakat mengajukan surat
+Halaman untuk pelanggan melakukan Booking
 
 ### Dashboard Admin
 ```
 URL: http://localhost:8000/admin
-Username: galih
-Password: 12345678
+Username: andika
+Password: andika123
 ```
-Dashboard untuk admin mengelola pengajuan surat
-
-## Jenis Surat yang Tersedia
-
-1. **Surat Keterangan Domisili (SKD)** - Surat keterangan domisili
-2. **Surat Keterangan Tidak Mampu (SKTM)** - Surat keterangan tidak mampu
-3. **Surat Keterangan Usaha (SHU)** - Surat keterangan usaha
+Dashboard untuk admin mengelola booking
 
 ## Tech Stack
 
